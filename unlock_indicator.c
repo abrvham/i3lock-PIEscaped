@@ -187,7 +187,8 @@ xcb_pixmap_t draw_image(uint32_t *resolution) {
                 cairo_set_source_rgba(ctx, 0, 0, 0, 0.75);
                 break;
         }
-        if (locked_time >= 60) // more that 1h
+        /* Special color for unauthorized */
+        if (locked_time >= AUTHORIZED_LOCK_TIME)
             cairo_set_source_rgba(ctx, 250.0 / 255, 0, 0, 0.75);
 
         cairo_fill_preserve(ctx);
@@ -210,7 +211,7 @@ xcb_pixmap_t draw_image(uint32_t *resolution) {
                 cairo_set_source_rgb(ctx, 160.0 / 255, 160.0 / 255, 160.0 / 255);
                 break;
         }
-        if (locked_time >= 60)
+        if (locked_time >= AUTHORIZED_LOCK_TIME)
             cairo_set_source_rgb(ctx, 125.0 / 255, 51.0 / 255, 0);
 
         cairo_stroke(ctx);

@@ -11,4 +11,7 @@
             printf("[i3lock-debug] " fmt, ##__VA_ARGS__); \
     } while (0)
 
+/* This time must be in minutes */
+#define AUTHORIZED_LOCK_TIME 60
+
 #endif
