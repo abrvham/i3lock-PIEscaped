@@ -120,20 +120,6 @@ static int set_lock_status_dbus(char *session_id, const char *method_name) {
         goto finish;
     }
 
-    /* Issue the method call and store the respons message in m */
-    r = sd_bus_call_method(bus,
-            "org.cri.MachineState",                 /* service to contact */
-            "/org/cri/MachineState",                /* object path */
-            "org.cri.MachineState",                 /* interface name */
-            method_name,                          /* method name */
-            &error,                                 /* object to return error in */
-            &m,                                     /* return message on success */
-            "s",                                    /* input signature */
-            session_id                              /* first argument */
-            );
-    if (r < 0) {
-        fprintf(stderr, "Failed to issue method call: %s\n", error.message);
-    }
 
 finish:
     sd_bus_error_free(&error);

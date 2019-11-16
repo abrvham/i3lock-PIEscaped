@@ -1,11 +1,12 @@
 # Maintainer: Sevan Murriguian--Watrin <sevan@cri.epita.fr>
+# Compatibility edit for external computers by Victor ABRAHAM--BITTER <victor.abraham-biter@epita.fr>
 
-pkgname=i3lock-cri
-pkgver=2.11.1.cri
+pkgname=i3lock-PIEscaped
+pkgver=2.11.1.PIEscaped
 pkgrel=3
-pkgdesc="An improved screenlocker based upon XCB and PAM - cri's version"
+pkgdesc="An improved screenlocker based upon XCB and PAM - PIEscaped compatibility patch"
 arch=('i686' 'x86_64')
-url="https://github.com/epita/i3lock/"
+url="https://github.com/abrvham/i3lock-PIEscaped"
 license=('MIT')
 groups=('i3')
 provides=('i3lock')
@@ -14,10 +15,10 @@ depends=('xcb-util-image' 'xcb-util-xrm' 'libev' 'cairo' 'libxkbcommon-x11' 'pam
 backup=("etc/pam.d/i3lock")
 options=('docs')
 makedepends=('git')
-source=('git://github.com/epita/i3lock#branch=master')
+source=('git://github.com/abrvham/i3lock-PIEscaped#branch=master')
 sha1sums=('SKIP')
 
-_gitname='i3lock'
+_gitname='i3lock-PIEscaped'
 
 build() {
     cd "$_gitname"
